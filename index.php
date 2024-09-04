@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/Models/Category.php';
 require_once __DIR__ . '/Models/Product.php';
 require_once __DIR__ . '/Models/Food.php';
 require_once __DIR__ . '/data/db.php';
@@ -15,6 +16,8 @@ require_once __DIR__ . '/data/db.php';
 </head>
 <body>
     <?php foreach($db as $product): ?>
+        <h3><?php echo $product->name ?></h3>
+        <h5><?php echo $product->category->name . ' ' . $product->category->animal_size ?> </h5>
     <?php $product->printIngredient() ?>
     <?php endforeach; ?>
 
