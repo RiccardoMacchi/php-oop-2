@@ -1,6 +1,7 @@
 <?php
 
 class Product {
+    public $img;
     public $name;
     public $size;
     public $price;
@@ -8,7 +9,8 @@ class Product {
     public $category;
     public $aviable;
 
-    public function __construct(string $_name, string $_size, float $_price, string $_description, Category $_category, bool $_aviable = false){
+    public function __construct(string $_img = null, string $_name, string $_size, float $_price, string $_description, Category $_category, bool $_aviable = false){
+        $this->img = $_img;
         $this->name = $_name;
         $this->size = $_size;
         $this->price = $_price;

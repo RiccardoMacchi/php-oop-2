@@ -14,6 +14,7 @@ require_once __DIR__ . '/data/db.php';
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>E-commerce DogCat</title>
 </head>
@@ -22,7 +23,8 @@ require_once __DIR__ . '/data/db.php';
     <div id="wrapper">
         <?php foreach($db as $product): ?>
             <div class="container">
-                <h3><?php echo $product->name ?></h3>
+                <h3><?php echo $product->name ?> <span><?php echo $product->category->iconName()  ?></span></h3>
+                <img src="<?php echo $product->img ?>" alt="">
                 <h5><?php echo $product->category->name . ' - ' . $product->category->type_of ?> </h5>
                 <h5>Prezzo per 1 quantità: <?php $product->printPrice() ?>€</h5> 
                 <h5>Disponibilità: <?php  echo $product->aviable ? 'Disponibile' : 'Esaurito' ?></h5>
