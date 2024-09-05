@@ -4,8 +4,8 @@ class Food extends Product {
     public $ingredients;
     public $body_size;
 
-    public function __construct(string $_img = null, string $_name, string $_size, float $_price, string $_description, array $_ingredients, string $_body_size, Category $_category, bool $_aviable = false){
-        parent::__construct($_img, $_name, $_size, $_price,$_description, $_category, $_aviable);
+    public function __construct(string $_img = null, string $_name, string $_size, float $_price, string $_description, array $_ingredients, string $_body_size, Category $_category, bool $_aviable = false, float $_discount = 0){
+        parent::__construct($_img, $_name, $_size, $_price,$_description, $_category, $_aviable, $_discount);
         $this->body_size = $_body_size;
         $this->ingredients = $_ingredients;
     }
